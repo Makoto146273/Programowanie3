@@ -62,6 +62,9 @@
     <Compile Include="Task1.xaml.cs">
       <DependentUpon>Task1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Task2.xaml.cs">
+      <DependentUpon>Task2.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -91,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Task1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Task2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
