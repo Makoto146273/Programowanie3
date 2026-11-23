@@ -1,0 +1,55 @@
+﻿<Window x:Class="Programowanie3.Task3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding TytulOkna}"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen">
+    
+    <DockPanel Margin="10">
+        
+        <TextBlock DockPanel.Dock="Top"
+                   Text="{Binding TytulOkna}"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   VerticalAlignment="Top"/>
+        
+        <TextBlock DockPanel.Dock="Top"
+                   Text="{Binding Status}"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"
+                   Margin="5"
+                   MinHeight="30"
+                   VerticalAlignment="Top"/>
+        
+        <StackPanel x:Name="PanelUstawiania"
+                    DockPanel.Dock="Bottom"
+                    Visibility="{Binding WidocznoscUstawiania}"
+                    Margin="0,8,0,5"
+                    VerticalAlignment="Bottom">
+            
+            <UniformGrid Rows="1" Columns="4" HorizontalAlignment="Center">
+                <Button Content="1" DataContext="{Binding PrzyciskiStatkow[0]}" Click="WybierzStatek_Click" IsEnabled="{Binding CzyAktywne}" Background="{Binding Tlo}" Width="65" Height="38" Margin="3"/>
+                <Button Content="2" DataContext="{Binding PrzyciskiStatkow[1]}" Click="WybierzStatek_Click" IsEnabled="{Binding CzyAktywne}" Background="{Binding Tlo}" Width="65" Height="38" Margin="3"/>
+                <Button Content="3" DataContext="{Binding PrzyciskiStatkow[2]}" Click="WybierzStatek_Click" IsEnabled="{Binding CzyAktywne}" Background="{Binding Tlo}" Width="65" Height="38" Margin="3"/>
+                <Button Content="4" DataContext="{Binding PrzyciskiStatkow[3]}" Click="WybierzStatek_Click" IsEnabled="{Binding CzyAktywne}" Background="{Binding Tlo}" Width="65" Height="38" Margin="3"/>
+            </UniformGrid>
+            
+            <UniformGrid Rows="1" Columns="3" HorizontalAlignment="Center" Width="408">
+                <Button Content="{Binding TekstOrientacji}" Click="Obroc_Click" Height="35" Margin="3"/>
+                <Button Content="Gumka" Click="Gumka_Click" Background="{Binding TloGumki}" Height="35" Margin="3"/>
+                <Button Content="Gotowe" Click="Potwierdz_Click" IsEnabled="{Binding CzyMoznaPotwierdzic}" Height="35" Margin="3"/>
+            </UniformGrid>
+            
+        </StackPanel>
+        
+        <UniformGrid x:Name="Plansza"
+                     Rows="10"
+                     Columns="10"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"/>
+    </DockPanel>
+</Window>
